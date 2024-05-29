@@ -6,22 +6,16 @@
 
 let actualLength = 0;
 var removeElement = function(nums, val) {
-    let p1 = 0;
-    let p2 = nums.length - 1;
-    let k = 0;
+    let count = 0;
     
     for (let i = 0; i < nums.length; i++) {
-        if (nums[i] === val) {
-            k++;
-            nums[p1] = nums[p2];
-            nums[p2] = nums[p1];
-            i--;
-            p2--;
-            nums.pop();
-        } else {
-            p1++;
+        if (nums[i] !== val) {
+            nums[count] = nums[i];
+            count++;
         }
+          
     }
+    return count;
     
 };
 
